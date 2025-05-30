@@ -1,0 +1,33 @@
+'use client';
+
+import MobileFrame from '@/component/layout/MobileFrame';
+import Image from 'next/image';
+import startBtn from '@/../public/0.start/startBtn.svg';
+import bg from '@/../public/0.start/bgimage.png';
+
+export default function StartPage({nextStep}) {
+
+  return (
+    <>
+      <MobileFrame>
+        <div className='flex justify-center items-center flex-col gap-[60px]'>
+          <div className='text-black font-[500] text-center text-[14px]
+            leading-loose tracking-wide '>
+            你與壓力的關係是哪一種酒？
+          </div>
+          <div className='text-black font-[300] text-center text-[14px]
+            leading-loose tracking-wide '>
+            每個人處理壓力的方式，都像一杯調酒
+            ——有的冰涼微醺、有的濃烈直擊，
+            有的清爽討喜，也有些溫吞耐人尋味。
+            如果壓力是酒精，你會是那種一飲而盡的龍舌蘭，
+            還是那杯氣泡四溢的Mojito？
+            現在就讓我們替你「特調一杯」壓力風格之酒，
+            看看你是哪一種紓壓系調酒人格！
+          </div>
+          <Image onClick={nextStep} className='w-[160px] h-[44px]' src={startBtn} alt='startBtn' />
+        </div>
+      </MobileFrame>
+    </>
+  );
+}
