@@ -8,6 +8,7 @@ import result2 from '@/../public/4.result/result-2.png';
 import result3 from '@/../public/4.result/result-3.png';
 import result4 from '@/../public/4.result/result-4.png';
 import circle1Img from '@/../public/0.start/blur-circle-1.png';
+import star from '@/../public/1.question/star.png';
 
 export default function ResultPage() {
 
@@ -22,7 +23,9 @@ export default function ResultPage() {
   return (
     <>
       <MobileFrame>
-        <div className='flex flex-col justify-center items-center'>
+        <div className=' relative flex flex-col justify-center items-center'>
+
+          <Image className="w-[320px] h-[320px] absolute bottom-0 translate-y-1/2 pointer-events-none z-0" src={circle1Img} alt="circle1Img" />
           
           {
             psyState.score < 5 &&
@@ -44,24 +47,36 @@ export default function ResultPage() {
             <Image className="flex justify-center w-[260px] h-auto mb-[16px]" src={result4} alt='result4' />
           }
 
-          <div className='flex justify-center font-semibold text-[#B65A0F] text-[14px] mb-[36px]'>長按或截圖可保存結果</div>
+          <div className='flex justify-center items-center mb-[36px]'>
+            <Image src={star} alt="star" className="w-[22px] h-[22px]" />
+            <div className="flex-1 w-full h-[1px] bg-black mx-1" />
+            <div className='text-black text-[16px]'>長按或截圖可保存結果</div>
+            <div className="flex-1 w-full h-[1px] bg-black mx-1" />
+            <Image src={star} alt="star" className="w-[22px] h-[22px]" />
+          </div>
 
-          <div className='flex justify-center gap-[16px]'>
+          <div className='flex justify-center gap-[16px] z-10'>
             <div 
-              className={` bg-[#B65A0F] w-[122px] rounded-full text-white 
-                px-[26px] py-[10px] text-[16px] flex justify-center items-center font-semibold
-                shadow-[0px_4px_0px_1px_#8D4509] cursor-pointer hover:translate-y-0.5 transition`}
+              className={`w-[122px] rounded-full text-black px-[26px] py-[10px]
+                text-[16px] flex justify-center items-center border-[0.5px]
+                cursor-pointer hover:translate-y-0.5 transition`}
+              style={{
+                background: 'linear-gradient(to bottom, rgba(255,255,255,1.0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,1.0) 100%)'
+              }}
               onClick={playAgain}
             > 再玩一次 </div>
 
             <div 
-              className={` bg-[#B65A0F] w-[122px] rounded-full text-white 
-                px-[26px] py-[10px] text-[16px] flex justify-center items-center font-semibold 
-                shadow-[0px_4px_0px_1px_#8D4509] cursor-pointer hover:translate-y-0.5 transition`}
+              className={`w-[122px] rounded-full text-black px-[26px] py-[10px]
+                text-[16px] flex justify-center items-center border-[0.5px]
+                cursor-pointer hover:translate-y-0.5 transition`}
+                style={{
+                  background: 'linear-gradient(to bottom, rgba(255,255,255,1.0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,1.0) 100%)'
+                }}
               onClick={playAgain}
             > 分享結果 </div>
           </div>
-          <Image className="absolute bottom-0 translate-y-1/2 pointer-events-none" src={circle1Img} alt="circle1Img" />
+          
         </div>
       </MobileFrame>
     </>

@@ -2,24 +2,33 @@
 
 import MobileFrame from '@/component/layout/MobileFrame'
 import Image from 'next/image';
-import circle1Img from '@/../public/0.start/blur-circle-1.png';
+import bg from '@/../public/0.start/bgimage.png';
+import star from '@/../public/1.question/star.png';
 
 export default function DisplayResultPage({nextStep}) {
 
   return (
     <>
       <MobileFrame>
-        <div className='flex flex-col justify-center items-center'>
-          <div className='text-[#B65A0F] font-bold text-[24px] mb-[76px]'>
-            顯示我的舒壓酒精
+        <div className='w-full h-full bg-center bg-cover flex flex-col justify-baseline items-center p-[44px] gap-[200px]'
+        style={{ backgroundImage: `url(${bg.src})` }}>
+          <div className='w-full h-[30px] flex items-center justify-center mt-[20px]'>
+            <Image src={star} alt="star" className="w-[22px] h-[22px]" />
+            <div className="flex-1 h-[1px] bg-black mx-4" />
+            <div className='text-black font-medium text-[20px]'>顯示我的舒壓酒精</div>
+            <div className="flex-1 h-[1px] bg-black mx-4" />
+            <Image src={star} alt="star" className="w-[22px] h-[22px]" />
           </div>
-            <div 
-              className={` bg-[#B65A0F] w-[138px] rounded-full text-white 
-                px-[32px] py-[10px] text-[18px] flex justify-center items-center font-semibold 
-                shadow-[0px_4px_0px_1px_#8D4509] cursor-pointer hover:translate-y-0.5 transition`}
-              onClick={nextStep}
-            > 查看結果 </div>
-            </div>
+          
+          <div className={`w-[138px] rounded-full text-black px-[32px] py-[10px] text-[18px]
+            flex justify-center items-center font-regular
+            cursor-pointer hover:translate-y-0.5 transition`}
+            style={{
+              background: 'linear-gradient(to bottom, rgba(255,255,255,1.0) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,1.0) 100%)'
+            }}
+            onClick={nextStep}
+          > 查看結果 </div>
+        </div>
       </MobileFrame>
     </>
   );

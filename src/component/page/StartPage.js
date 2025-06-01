@@ -10,7 +10,8 @@ export default function StartPage({nextStep}) {
   return (
     <>
       <MobileFrame>
-        <div className='flex justify-center items-center flex-col gap-[60px]'>
+        <div className="w-full h-full bg-center bg-cover flex justify-center items-center flex-col gap-[60px] p-[52px]"
+        style={{ backgroundImage: `url(${bg.src})` }}>
           <div className='text-black font-[500] text-center text-[14px]
             leading-loose tracking-wide '>
             你與壓力的關係是哪一種酒？
