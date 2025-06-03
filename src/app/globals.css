@@ -8,8 +8,12 @@
     --font-mono: var(--font-geist-mono);
 }
 
-  body {
-    background: var(--background);
-    color: var(--foreground);
-    font-family: Arial, Helvetica, 'Noto Sans TC',sans-serif;
-  }
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+
+:root {
+    --font-petit: 'Petit Formal Script', cursive;
+}
+  

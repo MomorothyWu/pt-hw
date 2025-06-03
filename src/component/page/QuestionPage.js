@@ -51,7 +51,7 @@ export default function QuestionPage({questionIndex, nextStep}) {
     <>
       <MobileFrame>
 
-        <div className='w-full h-full bg-center bg-cover flex flex-col items-center gap-[26px] p-[30px]'
+        <div className='w-full h-full bg-center bg-cover flex flex-col items-center gap-[26px] p-[30px] overflow-auto'
         style={{ backgroundImage: `url(${bgq.src})` }}>
 
           {questionIndex === 0 && (
@@ -76,9 +76,9 @@ export default function QuestionPage({questionIndex, nextStep}) {
             </div>
 
             {/* 問題編號 */}
-            <div className='text-black w-[48px] h-[48px]
+            <div className='text-black w-[48px] h-[48px] font-petit
               flex justify-center items-center font-regular text-2xl '>
-              Q{questionIndex + 1}
+              0{questionIndex + 1}
             </div>
 
             {/* 問題標題 */}

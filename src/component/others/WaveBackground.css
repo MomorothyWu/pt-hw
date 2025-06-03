@@ -13,12 +13,18 @@
     position: absolute;
     top: -440px;
     width: 200%;
-    height: 632px;
+    height: 700px;
     animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
     transform: translate3d(0, 0, 0);
     background-size: 2400px;
   }
-  
+
+  .wave:nth-of-type(2) {
+    top: -425px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -0.02s infinite, swell 7s ease -0.4s infinite;
+    opacity: 1;
+  }
+
   @keyframes wave {
     0% {
       background-position-x: 0;
