@@ -77,12 +77,12 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
             {/* 問題編號 */}
             <div className='text-black w-[48px] h-[48px] font-petit
-              flex justify-center items-center font-regular text-2xl '>
+              flex justify-center items-center text-2xl '>
               0{questionIndex + 1}
             </div>
 
             {/* 問題標題 */}
-            <div className="text-center font-medium text-xl text-black">
+            <div className="text-center font-regular tracking-widest text-xl text-black">
               {questionData.questions[questionIndex + 1].title}
             </div>
 
