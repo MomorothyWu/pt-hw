@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useBearStore } from '../store/store';
 
 export default function StoreTest() {
   const bears = useBearStore((state) => state.bears);
