@@ -13,6 +13,10 @@ import star from '@/../public/1.question/star.png';
 import {
   FacebookShareCount,
 } from "react-share";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+} from 'react-share'
 
 export default function ResultPage() {
 
@@ -94,10 +98,17 @@ export default function ResultPage() {
                 className="bg-white p-6 rounded-xl flex gap-6"
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* 圓形 icon 佔位用 */}
+                {/* 圓形 icon 佔位用
                 <FacebookShareCount url={shareUrl}>
                   {(shareCount) => <span className="myShareCountWrapper">{shareCount}</span>}
-                </FacebookShareCount>
+                </FacebookShareCount> */}
+                <FacebookShareButton
+                  url={'https://github.com/MomorothyWu/pt-hw/blob/main/public/4.result/result-1.png?raw=true'}
+                  quote={'next-share is a social share buttons for your next React apps.'}
+                  hashtag={'#nextshare'}
+                >
+                  <FacebookIcon size={32} round />
+                </FacebookShareButton>
               </div>
             </div>
           )}
