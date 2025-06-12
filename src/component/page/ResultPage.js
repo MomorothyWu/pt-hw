@@ -103,9 +103,9 @@ export default function ResultPage() {
                   {(shareCount) => <span className="myShareCountWrapper">{shareCount}</span>}
                 </FacebookShareCount> */}
                 <FacebookShareButton
-                  url={'https://github.com/MomorothyWu/pt-hw/blob/main/public/4.result/result-1.png?raw=true'}
-                  quote={'next-share is a social share buttons for your next React apps.'}
-                  hashtag={'#nextshare'}
+                   url={'https://pt-hw-dorothys-projects-0d99ad2e.vercel.app/share/result1'}
+                   quote={'快來測試你的酒精形壓力人格！'}
+                   hashtag={'#酒精形壓力心理測驗'}
                 >
                   <FacebookIcon size={32} round />
                 </FacebookShareButton>
