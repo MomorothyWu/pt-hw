@@ -10,12 +10,16 @@ import result3 from '@/../public/4.result/result-3.png';
 import result4 from '@/../public/4.result/result-4.png';
 import circle1Img from '@/../public/0.start/blur-circle-1.png';
 import star from '@/../public/1.question/star.png';
-import {
-  FacebookShareCount,
-} from "react-share";
+
 import {
   FacebookShareButton,
+  InstapaperShareButton,
+  LineShareButton,
+  ThreadsShareButton,
   FacebookIcon,
+  InstapaperIcon,
+  LineIcon,
+  ThreadsIcon
 } from 'react-share'
 
 export default function ResultPage() {
@@ -27,6 +31,17 @@ export default function ResultPage() {
     window.location.reload();
   }
 
+  // 判斷結果 index 的函式
+  const getResultIndex = () => {
+    if (psyState.score < 7) return 1;
+    if (psyState.score < 11) return 2;
+    if (psyState.score < 15) return 3;
+    return 4;
+  };
+
+  const resultIndex = getResultIndex();
+  const shareUrl = `https://pt-hw-dorothys-projects-0d99ad2e.vercel.app/share/result${resultIndex}`;
+
   return (
     <>
       <MobileFrame>
@@ -35,22 +50,22 @@ export default function ResultPage() {
           <Image className="w-[320px] h-[320px] absolute bottom-0 translate-y-1/2 pointer-events-none z-0" src={circle1Img} alt="circle1Img" />
           
           {
-            psyState.score < 5 &&
+            psyState.score < 7 &&
             <Image className="flex justify-center w-[260px] h-auto mb-[16px]" src={result1} alt='result1' />
           }
 
           {
-            (psyState.score >= 5 && psyState.score < 9) &&
+            (psyState.score >= 7 && psyState.score < 11) &&
             <Image className="flex justify-center w-[260px] h-auto mb-[16px]" src={result2} alt='result2' />
           }
 
           {
-            (psyState.score >= 9 && psyState.score < 12) &&
+            (psyState.score >= 11 && psyState.score < 15) &&
             <Image className="flex justify-center w-[260px] h-auto mb-[16px]" src={result3} alt='result3' />
           }
 
           {
-            psyState.score >= 12 &&
+            psyState.score >= 15 &&
             <Image className="flex justify-center w-[260px] h-auto mb-[16px]" src={result4} alt='result4' />
           }
 
@@ -103,12 +118,36 @@ export default function ResultPage() {
                   {(shareCount) => <span className="myShareCountWrapper">{shareCount}</span>}
                 </FacebookShareCount> */}
                 <FacebookShareButton
-                   url={'https://pt-hw-dorothys-projects-0d99ad2e.vercel.app/share/result1'}
+                   url={shareUrl}
                    quote={'快來測試你的酒精形壓力人格！'}
                    hashtag={'#酒精形壓力心理測驗'}
                 >
                   <FacebookIcon size={32} round />
                 </FacebookShareButton>
+
+                <InstapaperShareButton
+                  url={shareUrl}
+                  quote={'快來測試你的酒精形壓力人格！'}
+                  hashtag={'#酒精形壓力心理測驗'}
+                >
+                  <InstapaperIcon size={32} round/>
+                </InstapaperShareButton>
+
+                <LineShareButton
+                  url={shareUrl}
+                  quote={'快來測試你的酒精形壓力人格！'}
+                  hashtag={'#酒精形壓力心理測驗'}
+                >
+                  <LineIcon size={32} round/>
+                </LineShareButton>
+
+                <ThreadsShareButton
+                  url={shareUrl}
+                  quote={'快來測試你的酒精形壓力人格！'}
+                  hashtag={'#酒精形壓力心理測驗'}
+                >
+                  <ThreadsIcon size={32} round/>
+                </ThreadsShareButton>
               </div>
             </div>
           )}

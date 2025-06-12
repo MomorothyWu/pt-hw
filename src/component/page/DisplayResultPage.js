@@ -49,7 +49,7 @@ export default function DisplayResultPage({nextStep}) {
           <div className='w-full h-[30px] flex items-center justify-center mt-[20px]'>
             <Image src={star} alt="star" className="w-[22px] h-[22px]" />
             <div className="flex-1 h-[1px] bg-black mx-[4px]" />
-            <div className='text-black font-regular tracking-widest text-[20px]'>顯示我的舒壓酒精</div>
+            <div className='text-black font-regular tracking-widest text-[20px]'>顯示我的舒壓酒單</div>
             <div className="flex-1 h-[1px] bg-black mx-[4px]" />
             <Image src={star} alt="star" className="w-[22px] h-[22px]" />
           </div>

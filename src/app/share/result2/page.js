@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from 'next/image';
-import result1 from '@/../public/4.result/result-1.png';
+import result2 from '@/../public/4.result/result-2.png';
 import circle1Img from '@/../public/0.start/blur-circle-1.png';
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export default function ShareResult1() {
       <div className="w-full h-screen flex flex-col justify-center items-center">
         <Image className="w-[640px] h-[640px] absolute bottom-0 translate-y-1/2 pointer-events-none z-0" src={circle1Img} alt="circle1Img" />
           
-        <Image className="flex justify-center w-[300px] h-auto mb-[16px] z-10" src={result1} alt='result1'/>
+        <Image className="flex justify-center w-[300px] h-auto mb-[16px] z-10" src={result2} alt='result2'/>
 
         <Link href={"https://pt-hw-dorothys-projects-0d99ad2e.vercel.app/"}
         className="w-auto rounded-full text-black border-[0.5px]

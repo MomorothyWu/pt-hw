@@ -13,7 +13,7 @@ export default function Croissant() {
 
   const nextStep = function(){
     
-    if(psyState.state >= 3) return;
+    if(psyState.state >= 4) return;
 
     if(psyState.state == 1){
       //答題階段
@@ -32,23 +32,13 @@ export default function Croissant() {
 
   }
 
-  const prevStep = function(){
-    if(psyState.state <= 0) return;
-    console.log("prev");
-    psyState.updateState(psyState.state - 1);
-  }
-
-
   return (
     <>
-      <div className="w-screen h-screen bg-gray-200 flex justify-center items-center">
+      <div className="w-screen h-screen bg-[#E6FBEB] flex justify-center items-center">
         { psyState.state == 0 && <StartPage nextStep={nextStep} />}
         { psyState.state == 1 && <QuestionPage nextStep={nextStep} questionIndex={psyState.questionState} />}
         { psyState.state == 2 && <DisplayResultPage nextStep={nextStep}/>}
         { psyState.state == 3 && <ResultPage/>}
-        
-        {/* <div onClick={prevStep}>上一步</div>
-        <div onClick={nextStep}>下一步</div> */}
       </div>
     </>
   );

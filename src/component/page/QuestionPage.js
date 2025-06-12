@@ -8,6 +8,7 @@ import star from '@/../public/1.question/star.png';
 import bar1 from '@/../public/1.question/bar1.svg';
 import bar2 from '@/../public/1.question/bar2.svg';
 import bar3 from '@/../public/1.question/bar3.svg';
+import bar4 from '@/../public/1.question/bar4.svg';
 import { usePsyStore, useQuestionStore } from '@/app/store/store';
 
 
@@ -18,34 +19,11 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
 
   const clickAnswer = function(option){
-    nextStep();
-
     psyData.updateScore(psyData.score + option.value );
-
+    nextStep(); 
     console.log(option.title, option.value);
   }
-
-  const getMainColor = () => {
-    if (questionIndex === 0) return 'text-[#90B62A]';
-    if (questionIndex === 1) return 'text-[#DD3E3E]';
-    return 'text-[#1098EC]';
-  };
-
-  const questionImages = {
-    q1: {
-      up: "/1.question/q1-up.png",
-      down: "/1.question/q1-down.png"
-    },
-    q2: {
-      up: "/1.question/q2-up.png",
-      down: "/1.question/q2-down.png"
-    },
-    q3: {
-      up: "/1.question/q3-up.png",
-      down: "/1.question/q3-down.png"
-    },
-  };  
-
+  
 
   return (
     <>
@@ -62,6 +40,9 @@ export default function QuestionPage({questionIndex, nextStep}) {
           )}
           {questionIndex === 2 && (
             <Image className="w-full" src={bar3} alt="bar3" />
+          )}
+          {questionIndex === 3 && (
+            <Image className="w-full" src={bar4} alt="bar4" />
           )}
 
           {/* 問題區 */}
@@ -83,12 +64,12 @@ export default function QuestionPage({questionIndex, nextStep}) {
 
             {/* 問題標題 */}
             <div className="text-center font-regular tracking-widest text-xl text-black">
-              {questionData.questions[questionIndex + 1].title}
+              {questionData.questions[questionIndex]?.title}
             </div>
 
             {/* 選項按鈕 */}
             {
-              questionData.questions[questionIndex + 1].options.map((option, index) => (
+              questionData.questions[questionIndex]?.options.map((option, index) => (
                 <div
                   className="w-full rounded-full text-black border-[0.5px]
                     py-[16px] text-sm flex justify-center items-center font-light 

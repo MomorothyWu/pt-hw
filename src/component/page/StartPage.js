@@ -58,7 +58,12 @@ export default function StartPage({nextStep}) {
           
           <div className='text-black font-[400] text-center text-[18px]
             leading-loose tracking-widest z-10'>
-            你與壓力的關係是哪一種酒？
+              <div>
+                你的壓力酒譜，
+              </div>
+              <div>
+                你是哪一種壓力應對風格？
+              </div>
           </div>
           <div className='text-black font-[300] text-center text-[14px]
             leading-loose tracking-wide z-10'>
@@ -68,7 +73,7 @@ export default function StartPage({nextStep}) {
             如果壓力是酒精，你會是那種一飲而盡的龍舌蘭，
             還是那杯氣泡四溢的Mojito？
             現在就讓我們替你「特調一杯」壓力風格之酒，
-            看看你是哪一種紓壓系調酒人格！
+            看看你是哪一種壓力應對風格？
           </div>
           <Image onClick={nextStep} className='w-[160px] h-[44px] z-10' src={startBtn} alt='startBtn' />
           
